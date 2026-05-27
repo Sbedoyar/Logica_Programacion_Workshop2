@@ -5,8 +5,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /*
- * Administra operaciones generales del punto de admisiones:
- * historial de personas atendidas, promedio de espera e intervalos de atención.
+Administra operaciones generales del punto de admisiones:
+historial de personas atendidas, promedio de espera e intervalos de atención.
  */
 public class AdmissionsService 
 {
@@ -33,8 +33,8 @@ public class AdmissionsService
     }
 
     /*
-     * Calcula un número de la serie Fibonacci.
-     * Se usa para asignar un número a las personas con atención especial.
+    Calcula un número de la serie Fibonacci.
+    Se usa para asignar un número a las personas con atención especial.
      */
     private int calculateFibonacci(int position)
     {
@@ -56,7 +56,7 @@ public class AdmissionsService
     }
 
     /*
-     * Asigna el siguiente número Fibonacci disponible.
+    Asigna el siguiente número Fibonacci disponible.
      */
     public int assignFibonacciNumber()
     {
@@ -67,7 +67,7 @@ public class AdmissionsService
     }
 
     /*
-     * Guarda en el historial una persona que ya fue atendida.
+    Guarda en el historial una persona que ya fue atendida.
      */
     public void saveAttendedPerson(RecordAttentionPerson person)
     {
@@ -82,8 +82,8 @@ public class AdmissionsService
     }
 
     /*
-     * Muestra las personas que ya fueron atendidas.
-     */
+    Muestra las personas que ya fueron atendidas.
+    */
     public void displayAttendedPeople()
     {
         DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
@@ -106,8 +106,8 @@ public class AdmissionsService
         }
     }
     /*
-     * Calcula el promedio de tiempo de atención de los funcionarios.
-     */
+    Calcula el promedio de tiempo de atención de los funcionarios.
+    */
     public void showAverageAttentionTime()
     {
         long totalSeconds = 0;
@@ -141,8 +141,8 @@ public class AdmissionsService
     }
 
     /*
-     * Cuenta cuántas personas fueron atendidas dentro de un intervalo de tiempo.
-     */
+    Cuenta cuántas personas fueron atendidas dentro de un intervalo de tiempo.
+    */
     public int countAttendedInInterval(LocalDateTime startDateTime, LocalDateTime endDateTime)
     {
         int count = 0;

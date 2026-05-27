@@ -5,9 +5,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /*
- * Administra el inventario de la tienda.
- * Maneja dos estanterías independientes: una para productos tipo A y otra para tipo B.
- */
+Administra el inventario de la tienda.
+Maneja dos estanterías independientes: una para productos tipo A y otra para tipo B.
+*/
 public class InventoryService 
 {
     private final int T = 100;
@@ -30,8 +30,8 @@ public class InventoryService
     }
 
     /*
-     * Convierte el tipo de producto a mayúscula si el usuario ingresa a o b.
-     */
+    Convierte el tipo de producto a mayúscula si el usuario ingresa a o b.
+    */
     private char normalizeProductType(char productType)
     {
         if (productType == 'a') {
@@ -44,8 +44,8 @@ public class InventoryService
     }
 
     /*
-     * Retorna la estantería correspondiente al tipo de producto.
-     */
+    Retorna la estantería correspondiente al tipo de producto.
+    */
     private ProductStack getShelfByType(char productType)
     {
         ProductStack shelf = null;
@@ -61,8 +61,8 @@ public class InventoryService
     }
 
     /*
-     * Guarda el producto en el historial de ingresos.
-     */
+    Guarda el producto en el historial de ingresos.
+    */
     private void saveInputProduct(RecordProduct product)
     {
         if (inputCount < T) {
@@ -74,8 +74,8 @@ public class InventoryService
     }
 
     /*
-     * Guarda el producto en el historial de salidas.
-     */
+    Guarda el producto en el historial de salidas.
+    */
     private void saveOutputProduct(RecordProduct product)
     {
         if (outputCount < T) {
@@ -87,8 +87,8 @@ public class InventoryService
     }
 
     /*
-     * Sirve para validar si el cod del producto ya existe
-     */
+    Sirve para validar si el cod del producto ya existe
+    */
     public boolean productCodeExists(String code)
     {
         boolean exists = false;
@@ -103,8 +103,8 @@ public class InventoryService
     }
 
     /*
-     * Registra el ingreso de un producto al inventario.
-     */
+    Registra el ingreso de un producto al inventario.
+    */
     public void registerProduct(String code, char productType, double price, LocalDate expirationDate)
     {
         ProductStack shelf = getShelfByType(productType);
@@ -139,8 +139,8 @@ public class InventoryService
     }
 
     /*
-     * Lista los productos disponibles de acuerdo con el tipo seleccionado.
-     */
+    Lista los productos disponibles de acuerdo con el tipo seleccionado.
+    */
     public void listProductsByType(char productType)
     {
         ProductStack shelf = getShelfByType(productType);
@@ -153,8 +153,8 @@ public class InventoryService
     }
 
     /*
-     * Muestra el producto con fecha más próxima a vencerse entre ambas estanterías.
-     */
+    Muestra el producto con fecha más próxima a vencerse entre ambas estanterías.
+    */
     public void showNearestExpirationProduct()
     {
         RecordProduct nearestProduct = null;
@@ -195,8 +195,8 @@ public class InventoryService
     }
 
     /*
-     * Retorna la cantidad de productos disponibles en la estantería seleccionada.
-     */
+    Retorna la cantidad de productos disponibles en la estantería seleccionada.
+    */
     public int getAvailableProductsCount(char productType)
     {
         int count = -1;
@@ -210,8 +210,8 @@ public class InventoryService
     }
 
     /*
-    * Alista productos para la venta.
-    * Los productos alistados salen del inventario.
+    Alista productos para la venta.
+    Los productos alistados salen del inventario.
     */
     public void prepareProductsForSale(char productType, int amount)
     {
@@ -251,9 +251,10 @@ public class InventoryService
             System.out.println("Tipo de producto no valido. Debe ser A o B.");
         }
     }
+
     /*
-     * Verifica si una fecha y hora está dentro de un intervalo.
-     */
+    Verifica si una fecha y hora está dentro de un intervalo.
+    */
     
     private boolean isDateTimeInInterval(LocalDateTime dateTime, LocalDateTime startDateTime, LocalDateTime endDateTime)
     {
@@ -270,8 +271,8 @@ public class InventoryService
     }
 
     /*
-     * Cuenta cuántos productos ingresaron y cuántos salieron en un intervalo.
-     */
+    Cuenta cuántos productos ingresaron y cuántos salieron en un intervalo.
+    */
     public void countProductsMovementInInterval(LocalDateTime startDateTime, LocalDateTime endDateTime)
     {
         int inputs = 0;
@@ -299,8 +300,8 @@ public class InventoryService
 
     
     /*
-    * Organiza la estantería dejando en la parte superior
-    * los productos con fecha de vencimiento más próxima.
+    Organiza la estantería dejando en la parte superior
+    los productos con fecha de vencimiento más próxima.
     */
     public void moveNearExpirationProductsToTop(char productType)
     {
@@ -318,8 +319,8 @@ public class InventoryService
                 }
 
                 /*
-                * Ordenamiento manual por fecha de vencimiento.
-                * No se usan funciones avanzadas de Java.
+                Ordenamiento manual por fecha de vencimiento.
+                No se usan funciones avanzadas de Java.
                 */
                 for (int i = 0; i < productCount - 1; i++) {
                     for (int j = i + 1; j < productCount; j++) {
@@ -332,8 +333,8 @@ public class InventoryService
                 }
 
                 /*
-                * Se insertan primero los de fecha más lejana,
-                * para que los de fecha más próxima queden arriba.
+                Se insertan primero los de fecha más lejana,
+                para que los de fecha más próxima queden arriba.
                 */
                 for (int i = productCount - 1; i >= 0; i--) {
                     shelf.pushProduct(products[i]);

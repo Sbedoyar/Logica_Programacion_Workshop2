@@ -79,7 +79,40 @@ public class Trees
 
     }
 
+    //Ejercicios
 
+    //1-Contar los nodos del arbol
+    public int countNodes(NodeTree r)
+    {
+        if (r == null) {
+            return 0;
+        } else {
+            return 1 + countNodes(r.left) + countNodes(r.right);
+        }
+    }
 
+    //2-Contar los nodos con información negativa
+    public int countNodesNegative(NodeTree r)
+    {
+        if (r == null) {
+            return 0;
+        } else {
+            if (r.info < 0) {
+                return 1 + countNodesNegative(r.left) + countNodesNegative(r.right);
+            } else {
+                return countNodesNegative(r.left) + countNodesNegative(r.right);
+            }
+        }
+    }
 
+    //3-Sumar la información de los nodos
+    public int sumNodes(NodeTree r)
+    {
+        if (r == null) {
+            return 0;
+        } else {
+                return r.info + sumNodes(r.left) + sumNodes(r.right);
+        }
+    }
 }
+

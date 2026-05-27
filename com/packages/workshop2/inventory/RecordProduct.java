@@ -4,9 +4,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 /*
- * Representa el registro de un producto que ingresa al inventario.
- * Cada producto pertenece al tipo A o B y se organiza en su respectiva estantería.
- */
+Representa el registro de un producto que ingresa al inventario.
+Cada producto pertenece al tipo A o B y se organiza en su respectiva estantería.
+*/
 public class RecordProduct 
 {
     public String code;
@@ -18,9 +18,9 @@ public class RecordProduct
     public boolean available;
 
     /*
-     * Inicializa el producto con valores por defecto.
-     * La fecha y hora de registro se toma automáticamente del sistema.
-     */
+    Inicializa el producto con valores por defecto.
+    La fecha y hora de registro se toma automáticamente del sistema.
+    */
     public RecordProduct()
     {
         code = "";

@@ -3,9 +3,9 @@ package com.packages.workshop2.inventory;
 import java.time.format.DateTimeFormatter;
 
 /*
- * Maneja una estantería de productos usando estructura de pila.
- * Cada estantería almacena productos de un solo tipo: A o B.
- */
+Maneja una estantería de productos usando estructura de pila.
+Cada estantería almacena productos de un solo tipo: A o B.
+*/
 public class ProductStack 
 {
     private final int T = 100;
@@ -40,8 +40,8 @@ public class ProductStack
     }
 
     /*
-     * Agrega un producto en la parte superior de la estantería.
-     */
+    Agrega un producto en la parte superior de la estantería.
+    */
     public void pushProduct(RecordProduct product)
     {
         if (!isFull()) {
@@ -53,8 +53,8 @@ public class ProductStack
     }
 
     /*
-     * Retira el producto ubicado en la parte superior de la estantería.
-     */
+    Retira el producto ubicado en la parte superior de la estantería.
+    */
     public RecordProduct popProduct()
     {
         RecordProduct product = null;
@@ -71,8 +71,8 @@ public class ProductStack
     }
 
     /*
-     * Permite consultar un producto de la estantería por su posición.
-     */
+    Permite consultar un producto de la estantería por su posición.
+    */
     public RecordProduct getProductByPosition(int position)
     {
         RecordProduct product = null;
@@ -85,8 +85,8 @@ public class ProductStack
     }
 
     /*
-     * Lista los productos disponibles en la estantería.
-     */
+    Lista los productos disponibles en la estantería.
+    */
     public void displayProducts()
     {
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");

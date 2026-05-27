@@ -53,7 +53,7 @@ public class AttentionQueue
     }
 
     /*
-    * Indica si la primera persona de la fila tiene atención especial.
+    Indica si la primera persona de la fila tiene atención especial.
     */
     public boolean firstPersonHasSpecialAttention()
     {
@@ -67,9 +67,9 @@ public class AttentionQueue
     }
 
     /*
-     * Agrega una persona al final de la fila.
-     * Este método se usa para las personas con atención normal.
-     */
+    Agrega una persona al final de la fila.
+    Este método se usa para las personas con atención normal.
+    */
     public void addQueue(RecordAttentionPerson person)
     {
         if (!isFull()) {
@@ -81,9 +81,9 @@ public class AttentionQueue
     }
 
     /*
-     * Agrega una persona al inicio de la fila.
-     * Este método se usa cuando la persona tiene atención especial.
-     */
+    Agrega una persona al inicio de la fila.
+    Este método se usa cuando la persona tiene atención especial.
+    */
     public void addSpecialQueue(RecordAttentionPerson person)
     {
         if (!isFull()) {
@@ -99,9 +99,9 @@ public class AttentionQueue
     }
 
     /*
-     * Registra una persona en la fila.
-     * La fecha y hora de llegada se toman automáticamente del sistema.
-     */
+    Registra una persona en la fila.
+    La fecha y hora de llegada se toman automáticamente del sistema.
+    */
     public void registerPerson(String name, boolean specialAttention, int fibonacciNumber)
     {
         RecordAttentionPerson person = new RecordAttentionPerson();
@@ -121,9 +121,9 @@ public class AttentionQueue
     }
 
     /*
-     * Retira la primera persona de la fila.
-     * Mantiene el orden de las demás personas.
-     */
+    Retira la primera persona de la fila.
+    Mantiene el orden de las demás personas.
+    */
     public RecordAttentionPerson popQueue()
     {
         RecordAttentionPerson saved = null;
@@ -145,9 +145,9 @@ public class AttentionQueue
     }
 
     /*
-     * Atiende a la primera persona de la fila.
-     * Si tiene atención especial, valida el número fibonacci suministrado.
-     */
+    Atiende a la primera persona de la fila.
+    Si tiene atención especial, valida el número fibonacci suministrado.
+    */
     public RecordAttentionPerson attendPerson(int suppliedFibonacciNumber)
     {
         RecordAttentionPerson person = null;
@@ -178,8 +178,8 @@ public class AttentionQueue
     }
 
     /*
-     * Muestra las personas que están esperando atención.
-     */
+    Muestra las personas que están esperando atención.
+    */
     public void displayQueue()
     {
         DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
@@ -204,8 +204,8 @@ public class AttentionQueue
     }
 
     /*
-     * Traslada las personas a otra fila sin perder el orden que traían.
-     */
+    Traslada las personas a otra fila sin perder el orden que traían.
+    */
     public void moveToAnotherQueue(AttentionQueue anotherQueue)
     {
         while (!isEmpty()) {
